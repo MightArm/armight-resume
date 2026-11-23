@@ -49,6 +49,17 @@
   soundToggle.addEventListener("click", function () {
     soundEnabled = !soundEnabled;
     updateSoundUI();
+    if (soundEnabled) {
+      if (audio.src) {
+        audio.play().catch(function () { });
+        if (musicSongName) musicSongName.textContent = playlist[currentTrack].name;
+      } else {
+        playTrack(currentTrack);
+      }
+    } else {
+      audio.pause();
+      if (musicSongName) musicSongName.textContent = "--";
+    }
     blip();
   });
 
@@ -179,6 +190,32 @@
   }
 
   // ------------------------------------------------------------
+  // Music player: playlist with looping
+  // ------------------------------------------------------------
+  var playlist = [
+    { url: "https://opengameart.org/sites/default/files/8_bit_memory_indie_proj_2_ma_0.mp3", name: "8 Bit Memory" },
+    { url: "https://opengameart.org/sites/default/files/Viktor%20Kraus%20-%20Blueberries.mp3", name: "Blueberries" },
+    { url: "https://opengameart.org/sites/default/files/nao_e_undertale.mp3", name: "Nao e Undertale" }
+  ];
+  var currentTrack = 0;
+  var audio = new Audio();
+  var musicSongName = document.querySelector(".music-song-name");
+
+  function playTrack(index) {
+    if (!soundEnabled) return;
+    currentTrack = index % playlist.length;
+    if (audio.src !== playlist[currentTrack].url) {
+      audio.src = playlist[currentTrack].url;
+    }
+    audio.play().catch(function () { });
+    if (musicSongName) musicSongName.textContent = playlist[currentTrack].name;
+  }
+
+  audio.addEventListener("ended", function () {
+    playTrack(currentTrack + 1);
+  });
+
+  // ------------------------------------------------------------
   // Save-point stars: sparkle + "Saved" message
   // ------------------------------------------------------------
   document.querySelectorAll(".save-point").forEach(function (button) {
@@ -289,3 +326,5 @@
     { once: true }
   );
 })();
+
+

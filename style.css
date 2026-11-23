@@ -296,6 +296,36 @@ h2 {
   .sound-toggle:hover { transform: none; }
 }
 
+/* --- Music player --- */
+.music-player {
+  position: fixed;
+  inset-block-start: 1rem;
+  inset-inline-start: 4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-dim);
+  background-color: var(--bg-surface);
+  border: var(--border-width) solid var(--border);
+  box-shadow: 4px 4px 0 0 var(--ink);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+}
+
+.music-label {
+  color: var(--text-dim);
+}
+
+.music-song-name {
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 150px;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
