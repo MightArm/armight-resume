@@ -193,9 +193,9 @@
   // Music player: playlist with looping
   // ------------------------------------------------------------
   var playlist = [
-    { url: "https://opengameart.org/sites/default/files/8_bit_memory_indie_proj_2_ma_0.mp3", name: "8 Bit Memory" },
-    { url: "https://opengameart.org/sites/default/files/Viktor%20Kraus%20-%20Blueberries.mp3", name: "Blueberries" },
-    { url: "https://opengameart.org/sites/default/files/nao_e_undertale.mp3", name: "Nao e Undertale" }
+    { url: "https://raw.githubusercontent.com/MightArm/armight-resume/refs/heads/main/music/8_bit_memory_indie_proj_2_ma.mp3", name: "8 Bit Memory" },
+    { url: "https://raw.githubusercontent.com/MightArm/armight-resume/refs/heads/main/music/Viktor Kraus - Blueberries.mp3", name: "Blueberries" },
+    { url: "https://raw.githubusercontent.com/MightArm/armight-resume/refs/heads/main/music/nao_e_undertale.mp3", name: "Nao e Undertale" }
   ];
   var currentTrack = 0;
   var audio = new Audio();
