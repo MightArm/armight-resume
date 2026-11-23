@@ -372,3 +372,428 @@ footer {
   .container { padding-block: 3rem; padding-inline: 1.5rem; }
   .dialogue-text { padding: 1.5rem 1.25rem; font-size: 1.1rem; }
 }
+/* === hero v2 === */
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-height: 100svh;
+  padding-block: 1rem 0.5rem;
+  padding-inline: 1rem;
+  box-sizing: border-box;
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.hero-pixel-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  image-rendering: pixelated;
+  display: inline-block;
+}
+
+.hero-bubble {
+  background: #16213e;
+  border: var(--border-width) solid var(--border);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink);
+  padding: 0.9rem 1.1rem;
+  max-width: 60%;
+  margin-inline-start: auto;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: start;
+}
+
+.hero-bubble-text {
+  display: block;
+}
+
+.hero-typing {
+  display: inline-flex;
+  gap: 2px;
+  margin-inline-start: auto;
+}
+
+.hero-typing-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--text-dim);
+  image-rendering: pixelated;
+}
+
+.hero-reply {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-avatar-wrap {
+  flex-shrink: 0;
+}
+
+.hero-avatar {
+  width: 48px;
+  height: 48px;
+  image-rendering: pixelated;
+}
+
+.hero-reply-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.hero-name-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  margin-block-end: 0.25rem;
+}
+
+.hero-name-fa {
+  font-size: 0.72rem;
+}
+
+.hero-heading {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+@media (min-width: 600px) {
+  .hero-heading { font-size: 2.5rem; }
+}
+
+.hero-fullstop {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 0;
+}
+
+.hero-p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+
+.hero-p-main {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.hero-p-secondary {
+  font-size: 0.9rem;
+  margin-block-start: 0.75rem;
+}
+
+.hero-cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.hero-cards li:last-child {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 599px) {
+  .hero-cards {
+    grid-template-columns: 1fr;
+  }
+  .hero-cards li:last-child {
+    grid-column: auto;
+  }
+}
+
+.hero-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  background: var(--bg-surface);
+  border: var(--border-width) solid var(--border);
+  box-shadow: 4px 4px 0 0 var(--ink);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.hero-card:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+.hero-card:hover {
+  border-color: var(--accent);
+}
+
+.hero-card-icon {
+  width: 20px;
+  height: 20px;
+  background: var(--border);
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-inline-end: 0.75rem;
+  image-rendering: pixelated;
+}
+
+.hero-card-text {
+  flex: 1;
+}
+
+.hero-card-arrow {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.hero-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 480px) {
+  .hero-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-surface);
+  border: var(--border-width) solid var(--border);
+  box-shadow: 4px 4px 0 0 var(--ink);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+.hero-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+.hero-link:hover {
+  border-color: var(--accent);
+}
+
+.hero-link-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.hero-scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-dim);
+  margin-block-start: 1rem;
+  animation: scrollHintBob 2s steps(2) infinite;
+}
+
+.hero-scroll-hint svg {
+  width: 12px;
+  height: 12px;
+}
+/* Initial/hidden states for JS-driven animation */
+.js-ready .hero-label,
+.js-ready .hero-bubble-user,
+.js-ready .hero-reply,
+.js-ready .hero-p,
+.js-ready .hero-cards,
+.js-ready .hero-links,
+.js-ready .hero-scroll-hint {
+  opacity: 0;
+}
+
+.js-ready .hero-bubble-user {
+  transform: translatey(6px);
+}
+
+.js-ready .hero-reply {
+  transform: translatey(6px);
+}
+
+.js-ready .hero-heading {
+  opacity: 0;
+}
+
+.js-ready .hero-heading .word {
+  opacity: 0;
+}
+
+/* Label fade in */
+.js-ready .hero-label {
+  animation: heroLabelFade 0.3s steps(2) forwards;
+}
+
+@keyframes heroLabelFade {
+  to { opacity: 1; }
+}
+
+/* Bubble pop in */
+.js-ready .hero-bubble-user {
+  animation: heroBubblePop 0.4s steps(2) forwards 0.25s;
+}
+
+@keyframes heroBubblePop {
+  to { transform: translatey(0); opacity: 1; }
+}
+
+/* Typing indicator dots */
+.hero-typing-dot {
+  animation: typingDot 1.2s steps(2) infinite;
+}
+.hero-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.hero-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingDot {
+  0%, 100% { opacity: 0.35; transform: translatey(0); }
+  50% { opacity: 1; transform: translatey(-3px); }
+}
+
+/* Reply block fade + slide */
+.js-ready .hero-reply {
+  animation: heroReplyIn 0.5s steps(2) forwards 1.3s;
+}
+
+@keyframes heroReplyIn {
+  to { transform: translatey(0); opacity: 1; }
+}
+
+/* Heading word reveal */
+.js-ready .hero-heading .word.reveal {
+  animation: wordPop 0.15s steps(2) forwards;
+}
+
+@keyframes wordPop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Fullstop dot appears after heading */
+.js-ready .hero-fullstop {
+  opacity: 0;
+  animation: heroFullstop 0.3s steps(2) forwards 1.8s;
+}
+
+@keyframes heroFullstop {
+  to { opacity: 1; }
+}
+
+/* Paragraphs fade in */
+.js-ready .hero-p {
+  animation: heroPFade 0.4s steps(2) forwards 1.9s;
+}
+
+@keyframes heroPFade {
+  to { opacity: 1; }
+}
+
+/* Cards fade in */
+.js-ready .hero-cards {
+  animation: heroCardsFade 0.4s steps(2) forwards 2.1s;
+}
+
+@keyframes heroCardsFade {
+  to { opacity: 1; }
+}
+
+/* Links fade in */
+.js-ready .hero-links {
+  animation: heroLinksFade 0.4s steps(2) forwards 2.3s;
+}
+
+@keyframes heroLinksFade {
+  to { opacity: 1; }
+}
+
+/* Scroll hint bob */
+@keyframes scrollHintBob {
+  0%, 100% { transform: translatey(0); }
+  50% { transform: translatey(4px); }
+}
+
+/* Scroll drift (applied by JS when scrolling away) */
+.hero-drift {
+  transform: translatey(-10px);
+  opacity: 0.55;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+/* Pause all ambient animation when tab hidden */
+body.hidden .hero-typing-dot,
+body.hidden .hero-scroll-hint,
+body.hidden .hero-drift {
+  animation-play-state: paused !important;
+  transition: none !important;
+}
+
+/* Reduced motion: static hero, no typing, no drift, no bobbing */
+@media (prefers-reduced-motion: reduce) {
+  .js-ready .hero-label,
+  .js-ready .hero-bubble-user,
+  .js-ready .hero-reply,
+  .js-ready .hero-p,
+  .js-ready .hero-cards,
+  .js-ready .hero-links,
+  .js-ready .hero-scroll-hint,
+  .js-ready .hero-heading,
+  .js-ready .hero-heading .word,
+  .js-ready .hero-fullstop {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .hero-typing { display: none !important; }
+  .hero-scroll-hint { animation: none !important; }
+  .hero-drift { transform: none !important; opacity: 1 !important; transition: none !important; }
+}

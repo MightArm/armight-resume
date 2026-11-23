@@ -206,3 +206,86 @@
     });
   });
 })();
+/* === hero v2 === */
+(function () {
+  "use strict";
+
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var hero = document.getElementById("hero");
+  var heading = hero.querySelector(".hero-heading");
+  var typing = hero.querySelector(".hero-typing");
+  var scrollHint = hero.querySelector(".hero-scroll-hint");
+
+  if (reduced.matches) {
+    if (typing) typing.style.display = "none";
+    return;
+  }
+
+  // Type heading by whole words after the typing indicator (~700 ms)
+  setTimeout(function () {
+    if (typing) typing.style.display = "none";
+
+    var fullText = heading.textContent.trim();
+    var typeText = fullText.replace(/·\s*$/, "").trim();
+    var fullstopEl = heading.querySelector(".hero-fullstop");
+
+    heading.innerHTML = "";
+    var words = typeText.split(/\s+/);
+    words.forEach(function (w, i) {
+      var span = document.createElement("span");
+      span.className = "word";
+      span.textContent = w;
+      heading.appendChild(span);
+      if (i !== words.length - 1) {
+        heading.appendChild(document.createTextNode(" "));
+      }
+    });
+    if (fullstopEl) {
+      heading.appendChild(document.createTextNode(" "));
+      heading.appendChild(fullstopEl);
+    }
+
+    var spans = heading.querySelectorAll(".word");
+    var i = 0;
+    function next() {
+      if (i >= spans.length) return;
+      spans[i].classList.add("reveal");
+      i++;
+      if (i < spans.length) {
+        setTimeout(next, 55);
+      }
+    }
+    next();
+  }, 1300);
+
+  // Scroll drift: hero drifts up and fades as user scrolls away
+  var ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(updateDrift);
+      ticking = true;
+    }
+  }
+
+  function updateDrift() {
+    var scrolled = window.pageYOffset;
+    if (scrolled > 40) {
+      hero.classList.add("hero-drift");
+    } else {
+      hero.classList.remove("hero-drift");
+    }
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Fade out scroll hint after the first scroll
+  window.addEventListener(
+    "scroll",
+    function () {
+      scrollHint.style.opacity = "0";
+      scrollHint.style.pointerEvents = "none";
+    },
+    { once: true }
+  );
+})();
