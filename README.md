@@ -73,6 +73,18 @@ Vercel serves the static files directly. `vercel.json` handles clean URLs and lo
 - Mobile first, tested from 320 px up.
 - Respects `prefers-reduced-motion`: text shows immediately, parallax and animations disabled.
 
+## Music Credits
+
+The music featured on this website belongs to its respective creators. All tracks are sourced from OpenGameArt.org.
+
+| Track | Original Source |
+|---|---|
+| Nao e Undertale | [It's not Undertale](https://opengameart.org/content/its-not-undertale) |
+| Blueberries | [Blueberries](https://opengameart.org/content/blueberries) |
+| 8 Bit Memory | [8-bit Summer Memory](https://opengameart.org/content/8-bit-summer-memory) |
+
+Special thanks to the artists who made these tracks available.
+
 ## License
 
 Site code: MIT. Font: SIL Open Font License (see upstream Vazirmatn repository).
