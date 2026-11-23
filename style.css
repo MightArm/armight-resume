@@ -446,7 +446,10 @@ footer {
 .hero-avatar {
   width: 48px;
   height: 48px;
-  image-rendering: pixelated;
+  border-radius: 8px;
+  object-fit: cover;
+  image-rendering: auto;
+  display: block;
 }
 
 .hero-reply-content {
@@ -659,10 +662,6 @@ footer {
 
 .js-ready .hero-reply {
   transform: translatey(6px);
-}
-
-.js-ready .hero-heading {
-  opacity: 0;
 }
 
 .js-ready .hero-heading .word {
